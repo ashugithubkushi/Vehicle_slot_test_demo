@@ -8,8 +8,6 @@ import './Dashboard.css';
 import Navbar from '../../Components/Navbar/Navbar';
 
 const Dashboard = () => {
-
-    
 const [totalSlots, setTotalSlots] = useState(0);
 const [totalVehicles, setTotalVehicles] = useState(0);
 const [totalUsers, setTotalUsers] = useState(0);
@@ -44,7 +42,7 @@ const [totalUsers, setTotalUsers] = useState(0);
          <Navbar/>
     <Box  sx={{ width: "100%", p: 1, height: "100vh", mt: 1, borderRadius: 5 }}>
 
-    <div class="grid-containers">
+    <div className="grid-containers">
           {/* Slot count  */}
           <div className="grid-items">
             <div className="d-flex justify-content-between align-items-center">

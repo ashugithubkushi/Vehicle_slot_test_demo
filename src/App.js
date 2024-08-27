@@ -16,9 +16,7 @@ function App() {
    <Routes>
      <Route path="/" element={<AdminLogin />} />
      <Route path="/dashboard" element={<Dashboard />} />
-
    </Routes>
-   {/* <TimeSlotSelector/> */}
    </div>
    </div>
    </div>

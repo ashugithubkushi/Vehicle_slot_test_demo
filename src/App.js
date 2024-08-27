@@ -10,7 +10,7 @@ function App() {
     
 <BrowserRouter>
 <div className="d-flex app">
-   <Sidebar/>
+   {/* <Sidebar/> */}
  <div className='col'>
   <div className='app'>
   {/* <Navbar/>  */}

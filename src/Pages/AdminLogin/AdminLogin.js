@@ -55,30 +55,41 @@ const handleSubmit = (e) => {
   }
 
   axios
-    .post("https://mp31c0a15b1e5005443b.free.beeceptor.com/login", {
-      username,
-      password,
-    })
-    .then((response) => {
-      console.log("Response from server:", response);
-      console.log("Full response data:", response.data);
+  // .post("https://mp31c0a15b1e5005443b.free.beeceptor.com/login", {
+  .post("http://localhost:3000/createAdminlogin", {
+    username,
+    password,
+  })
+  .then((response) => {
+    // Assuming success response includes success flag and user details
+    const { success, users } = response.data;
+    const validUser = users.find(user => user.username === username && user.password === password);
 
-      const { success, users } = response.data;
-
-      // Check
-      const validUser = users.find(user => user.username === username && user.password === password);
-
-      if (success && validUser) {
-        console.log("Logged in as:", validUser.username);
-        navigate("/dashboard", { state: { username: validUser.username, password: validUser.password } });
-      } else {
+    if (success && validUser) {
+      console.log("Logged in as:", validUser.username);
+      navigate("/dashboard", { state: { username: validUser.username, password: validUser.password } });
+    } else {
+      setLoginError("Unauthorized user. Please check your username and password.");
+    }
+  })
+  .catch((error) => {
+    if (error.response) {
+      // Server responded with a status code other than 2xx
+      if (error.response.status === 401) {
         setLoginError("Unauthorized user. Please check your username and password.");
+      } else {
+        setLoginError("Login failed. Please try again.");
       }
-    })
-    .catch((error) => { 
-      console.error("Error occurred:", error);
+    } else if (error.request) {
+      // Request was made but no response was received
+      console.error("No response received:", error.request);
       setLoginError("Login failed. Please try again.");
-    });
+    } else {
+      // Something happened in setting up the request
+      console.error("Error setting up request:", error.message);
+      setLoginError("Login failed. Please try again.");
+    }
+  });
 };
 
   return (

@@ -14,7 +14,7 @@ const [totalUsers, setTotalUsers] = useState(0);
 
     useEffect(() => {
         axios
-          .get("https://combined-data1.free.beeceptor.com/combined-data")
+          .get("https://combined-data2.free.beeceptor.com/combined-data")
           // .get("")
           .then((response) => {
             // Check if response.data exists and has counts object

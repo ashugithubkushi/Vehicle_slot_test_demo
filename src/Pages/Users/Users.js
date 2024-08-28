@@ -3,7 +3,7 @@ import './Users.css'
 import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, Tooltip} from 'reactstrap';
 import { Box } from '@mui/material';
-import Navbar from '../Navbar';
+import Navbar from '../../Components/Navbar/Navbar';
 
 const Users = () => {
   const [username, setUsername] = useState('');
@@ -180,11 +180,11 @@ const deleteUser = (userId) => {
 };
 
 //image 
-const [image, setImage] = useState(null); 
-const handleImageUpload = (e) => {
-  const file = e.target.files[0]; // Get the uploaded file
-  setImage(file); // Store the uploaded file in state
-};
+// const [image, setImage] = useState(null); 
+// const handleImageUpload = (e) => {
+//   const file = e.target.files[0]; // Get the uploaded file
+//   setImage(file); // Store the uploaded file in state
+// };
 
 
 
@@ -203,7 +203,7 @@ const handleImageUpload = (e) => {
           <div className="row">
 
 
-          <div className="col-lg-6 col-md-6">
+          {/* <div className="col-lg-6 col-md-6">
   <div className="form-group">
     <label className='d-block fw-semibold'  style={{ fontSize: '16px' }}>Image</label>
     <input
@@ -218,7 +218,7 @@ const handleImageUpload = (e) => {
       {errors.image}
     </Tooltip>
   </div>
-</div>
+</div> */}
 
             
             <div className="col-lg-6 col-md-6">

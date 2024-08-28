@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Button, Modal, ModalBody, Tooltip } from "reactstrap";
 import { Box } from "@mui/material";
@@ -15,9 +14,9 @@ const VehiclesList = () => {
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editVehicleId, setEditVehicleId] = useState(null);
-  const [vehicleCounts, setVehicleCounts] = useState({}); // State to hold vehicle counts
+  const [vehicleCounts, setVehicleCounts] = useState({}); 
 
-  const { id } = useParams();
+//   const { id } = useParams();
 
   const validateForm = () => {
     let isValid = true;

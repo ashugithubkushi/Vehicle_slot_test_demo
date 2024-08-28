@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from'react-router-dom';
 import AdminLogin from './Pages/AdminLogin/AdminLogin';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import VehiclesList from './Pages/VehiclesList/VehiclesList';
 import Sidebar from './Components/Sidebar/Sidebar';
 function App() {
   
@@ -18,7 +17,7 @@ function App() {
    <Routes>
      <Route path="/" element={<AdminLogin />} />
      <Route path="/dashboard" element={<Dashboard />} />
-     <Route path="/vehicleslist" element={<VehiclesList />} />
+     {/* <Route path="/vehicleslist" element={<VehiclesList />} /> */}
    </Routes>
    </div>
    </div>

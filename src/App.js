@@ -2,8 +2,8 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from'react-router-dom';
 import AdminLogin from './Pages/AdminLogin/AdminLogin';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import Sidebar from './Components/Sidebar/Siderbar';
 import VehiclesList from './Pages/VehiclesList/VehiclesList';
+import Sidebar from './Components/Sidebar/Sidebar';
 function App() {
   
   

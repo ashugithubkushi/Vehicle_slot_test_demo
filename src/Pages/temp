@@ -1,0 +1,134 @@
+<Modal isOpen={modal} toggle={toggleModal} centered={true} style={{ marginTop: '60px' }}>
+        <ModalHeader toggle={toggleModal}>Edit Slot</ModalHeader>
+        <ModalBody>
+  {/* <form onSubmit={handleSubmit}> */}
+  <form onSubmit={handleUpdate}>
+    <div className="form-group">
+      <label>Vehicle Name:</label>
+      <select
+        name="selectedVehicle"
+        value={formData.selectedVehicle}
+        onChange={handleInputChange}
+      >
+        <option value="">Select Vehicle</option>
+        {vehicleNames.map((name, index) => (
+          <option key={index} value={name}>
+            {name}
+          </option>
+        ))}
+      </select>
+    </div>
+
+
+{/* filter  */}
+    {/* <div className="form-group">
+      <label>Date:</label>
+      <DatePicker
+  selected={formData.selectedDate}
+  onChange={(date) => handleDateChange(date)}
+  dateFormat="yyyy-MM-dd"
+/>
+   
+    <div>
+            <DatePicker
+                selected={startDate}
+                onChange={handleStartDateChange}
+                selectsStart
+                startDate={startDate}
+                endDate={endDate}
+                placeholderText="From Date"
+            />
+            <DatePicker
+                selected={endDate}
+                onChange={handleEndDateChange}
+                selectsEnd
+                startDate={startDate}
+                endDate={endDate}
+                minDate={startDate}
+                placeholderText="To Date"
+            />
+            <button onClick={handleSearch}>Search</button>
+        </div>
+        </div>   */}
+
+    
+
+    {/* <div className="form-group">
+      <label>Vehicle Number:</label>
+      <select
+        name="vehicleNumber"
+        value={formData.vehicleNumber}
+        onChange={handleInputChange}
+      >
+        <option value="">Select Vehicle Number</option>
+        {vehicleNumbers.map((number, index) => (
+          <option key={index} value={number}>
+            {number}
+          </option>
+        ))}
+      </select>
+    </div> */}
+     <label>Vehicle Number:</label>
+  <select
+    name="vehicleNumber"
+    value={formData.vehicleNumber}
+    onChange={handleInputChange}
+  >
+    <option value="">Select Vehicle Number</option>
+    {/* Filter vehicle numbers based on the selected vehicle */}
+    {vehiclesData
+      .filter((vehicle) => vehicle.vehicleName === formData.selectedVehicle)
+      .map((vehicle) => (
+        <option key={vehicle.vehicleNum} value={vehicle.vehicleNum}>
+          {vehicle.vehicleNum}
+        </option>
+      ))}
+  </select>
+   
+
+
+  
+    <div className="form-group">
+      <label>Villa Number:</label>
+      <input
+        type="text"
+        name="villaNumber"
+        value={formData.villaNumber}
+        onChange={handleInputChange}
+      />
+    </div>
+    {/* <div className="form-group">
+      <label>Booked By:</label>
+      <input
+        type="text"
+        name="bookedBy"
+        value={formData.bookedBy}
+        onChange={handleInputChange}
+      />
+    </div> */}
+    <div className="form-group">
+  <label>Booked By:</label>
+  <select
+    name="bookedBy"
+    value={formData.bookedBy}
+    onChange={handleInputChange}
+  >
+    <option value="">Select User</option>
+    {bookedByOptions.map((user, index) => (
+      <option key={index} value={user}>
+        {user}
+      </option>
+    ))}
+  </select>
+</div>
+  </form>
+</ModalBody>
+        <ModalFooter>
+          <Button color="secondary" onClick={toggleModal}>
+            Cancel
+          </Button>
+          <Button color="primary" onClick={handleSubmit}>
+            Save
+          </Button>
+        </ModalFooter>
+      </Modal>

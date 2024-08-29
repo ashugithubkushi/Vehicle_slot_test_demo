@@ -5,6 +5,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Sidebar from './Components/Sidebar/Sidebar';
 import VehiclesList from './Pages/VehiclesList/VehiclesList';
 import Users from './Pages/Users/Users';
+import AdminBookings from './Pages/AdminBookings/AdminBookings';
 function App() {
   
   
@@ -19,6 +20,7 @@ function App() {
    <Routes>
      <Route path="/" element={<AdminLogin />} />
      <Route path="/dashboard" element={<Dashboard />} />
+     <Route path="/adminbookings" element={<AdminBookings />} />
      <Route path="/vehicleslist" element={<VehiclesList />} />
      <Route path="/users" element={<Users />} />
    </Routes>

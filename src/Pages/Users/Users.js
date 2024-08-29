@@ -220,7 +220,6 @@ const deleteUser = (userId) => {
   </div>
 </div> */}
 
-            
             <div className="col-lg-6 col-md-6">
               <div className="form-group">
                 <label className='d-block fw-semibold' style={{ fontSize: '16px' }}>Username</label>

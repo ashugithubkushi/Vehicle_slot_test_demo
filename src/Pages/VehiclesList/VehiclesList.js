@@ -159,7 +159,7 @@ const VehiclesList = () => {
   useEffect(() => {
     axios
       .get("https://vehnum3.free.beeceptor.com/vehNum3")
-      // .get("http://localhost:3000/vehicles")
+    //   .get("http://localhost:3000/vehicles")
       .then((response) => {
         console.log("API Response of Add Vehicles:", response);    
         const initialCounts = {};

@@ -58,8 +58,8 @@ const Users = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       if (validateForm()) {
-        // axios.post("http://localhost:3000/createCreateuser", { username, email, password, designation, contact })
-        axios.post("https://slots-table.free.beeceptor.com/users-table", { username, email, password, designation, contact })
+        axios.post("http://localhost:3000/createCreateuser", { username, email, password, designation, contact })
+        // axios.post("https://slots-table.free.beeceptor.com/users-table", { username, email, password, designation, contact })
           .then(result => {
             console.log(result);
             console.log('Submitted Data:', username,  email, password, designation, contact);
@@ -129,8 +129,8 @@ const Users = () => {
 
 
   useEffect(() => {
-    // axios.get("http://localhost:3000/createusers")
-    axios.get("https://get-users.free.beeceptor.com/users-get")
+    axios.get("http://localhost:3000/createusers")
+    // axios.get("https://get-users.free.beeceptor.com/users-get")
       .then(response => {
         setUser(response.data); 
         console.log("API Response of Add Users:", response);    
@@ -145,9 +145,9 @@ const Users = () => {
 const handleUpdate = (e) => {
   e.preventDefault();
   if (validateForm()) {
-    // axios.put(`http://localhost:3000/updateCreateuser/${editUserId}`, { username, email, password, designation, contact })
-    axios.put(`https://mp7c7dad67444e159894.free.beeceptor.com/user-update/${editUserId}`, { 
-      username, 
+    axios.put(`http://localhost:3000/updateCreateuser/${editUserId}`, {
+    // axios.put(`https://mp7c7dad67444e159894.free.beeceptor.com/user-update/${editUserId}`, { 
+     username, 
       email, 
       password, 
       designation, 
@@ -167,8 +167,8 @@ const handleUpdate = (e) => {
 
 
 const deleteUser = (userId) => {
-  // axios.delete(`http://localhost:3000/deleteCreateuser/${userId}`)
-  axios.delete(`https://mp7c7dad67444e159894.free.beeceptor.com/user-delete/${userId}`)
+  axios.delete(`http://localhost:3000/deleteCreateuser/${userId}`)
+//   axios.delete(`https://mp7c7dad67444e159894.free.beeceptor.com/user-delete/${userId}`)
     .then(result => {
       console.log(result.data); // Log successful response
       // Handle success as needed
@@ -341,11 +341,12 @@ const deleteUser = (userId) => {
 <div className="table-container">
 
     <div className="name-with-button-container">
+    <span className="name"><h5><b>User Data</b></h5></span>
+       
     <button className="btn btn-success float-end" onClick={toggleModal}>
           Add User
         </button>
- <span className="name"><h5><b>User Data</b></h5></span>
-        </div>
+ </div>
 
         <table className="table-no-border">
   <thead>

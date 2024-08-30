@@ -56,8 +56,8 @@ const handleSubmit = (e) => {
   }
 
   axios
-  .post("https://mp31c0a15b1e5005443b.free.beeceptor.com/login", {
-  // .post("http://localhost:3000/createAdminlogin", {
+  // .post("https://mp31c0a15b1e5005443b.free.beeceptor.com/login", {
+  .post("http://localhost:3000/createAdminlogin", {
     username,
     password,
   })

@@ -522,8 +522,8 @@ const AdminBookings = ({ setSlots }) => {
   const [vehicleNumbers, setVehicleNumbers] = useState([]);
 
   useEffect(() => {
-    // axios.get("http://localhost:3000/vehicles")
-    axios.get("https://vehnum3.free.beeceptor.com/vehNum3")
+    axios.get("http://localhost:3000/vehicles")
+    // axios.get("https://vehnum3.free.beeceptor.com/vehNum3")
       .then((res) => {
         const vehicles = res.data;
         const names = vehicles.map(vehicle => vehicle.vehicleName);
@@ -560,7 +560,8 @@ const AdminBookings = ({ setSlots }) => {
   const toggleModal = () => setModal(!modal);
 
   useEffect(() => {
-    axios.get("https://slots-table2.free.beeceptor.com/slot-table2")
+    // axios.get("https://slots-table2.free.beeceptor.com/slot-table2")
+    axios.get("http://localhost:3000/getslots")
       .then((res) => {
         console.log("API Response of Bookings", res);
         setData(res.data.data);
@@ -596,7 +597,6 @@ const AdminBookings = ({ setSlots }) => {
     }
     return true;
   });
-
   const Update = (e, status, id) => {
     e.preventDefault();
     axios.put(`http://localhost:3000/updateslots/${id}`, { status })

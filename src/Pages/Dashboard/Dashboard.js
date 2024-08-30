@@ -500,8 +500,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("https://combined-data5.free.beeceptor.com/combined-data")
-      // .get("")
+      // .get("https://combined-data5.free.beeceptor.com/combined-data")
+      .get("")
       .then((response) => {
         if (response.data && response.data.counts) {
           setTotalSlots(response.data.counts.totalSlots || 0);
@@ -522,8 +522,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("https://vehnum3.free.beeceptor.com/vehNum3")
-      // .get("")
+      // .get("https://vehnum3.free.beeceptor.com/vehNum3")
+      .get("http://localhost:3000/vehicles")
       .then((response) => {
         const vehicles = response.data;
 
@@ -570,7 +570,8 @@ const Dashboard = () => {
   };
 
   const fetchSlots = (vehicleName) => {
-    fetch(`https://slotapi3.free.beeceptor.com/slots?vehicleName=${vehicleName}`)
+    // fetch(`https://slotapi3.free.beeceptor.com/slots?vehicleName=${vehicleName}`)
+    fetch(``)
       .then((response) => response.json())
       .then((data) => {
         console.log("API Response of Slots:", data);
@@ -646,7 +647,8 @@ const Dashboard = () => {
     };
 
     axios
-      .post("https://vehicles-slot.free.beeceptor.com/submit", {
+      .post("http://localhost:3000/createSlots", {
+      // .post("https://vehicles-slot.free.beeceptor.com/submit", {
         formData,
       })
       .then((response) => {

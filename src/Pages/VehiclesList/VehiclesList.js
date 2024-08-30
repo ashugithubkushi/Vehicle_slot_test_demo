@@ -80,9 +80,9 @@ const VehiclesList = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // axios.post("http://localhost:3000/createVehicle", { vehicleName, vehicleNum, contactNum })
-      axios.post("https://slots-table.free.beeceptor.com/add-vehicles-post", { vehicleName, vehicleNum, contactNum })
-        .then(result => {
+      axios.post("http://localhost:3000/createVehicle", { vehicleName, vehicleNum, contactNum })
+    //   axios.post("https://slots-table.free.beeceptor.com/add-vehicles-post", { vehicleName, vehicleNum, contactNum })
+       .then(result => {
           console.log(result);
           console.log('Submitted Data:', vehicleName, vehicleNum, contactNum);
 
@@ -158,8 +158,8 @@ const VehiclesList = () => {
 
   useEffect(() => {
     axios
-      .get("https://vehnum3.free.beeceptor.com/vehNum3")
-    //   .get("http://localhost:3000/vehicles")
+    //   .get("https://vehnum3.free.beeceptor.com/vehNum3")
+      .get("http://localhost:3000/vehicles")
       .then((response) => {
         console.log("API Response of Add Vehicles:", response);    
         const initialCounts = {};
@@ -183,8 +183,8 @@ const VehiclesList = () => {
     e.preventDefault();
     if (validateForm()) {
       axios
-        // .put(`http://localhost:3000/updateVehicle/${editVehicleId}`, {
-        .put(`https://mp31c0a15b1e5005443b.free.beeceptor.com/update-vehicle/${editVehicleId}`, {
+        .put(`http://localhost:3000/updateVehicle/${editVehicleId}`, {
+        // .put(`https://mp31c0a15b1e5005443b.free.beeceptor.com/update-vehicle/${editVehicleId}`, {
           vehicleName,
           vehicleNum,
           contactNum,
